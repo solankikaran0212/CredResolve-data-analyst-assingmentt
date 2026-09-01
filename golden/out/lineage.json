@@ -1,0 +1,74 @@
+{
+  "payments": [
+    {
+      "stage": "raw",
+      "rows": 25500,
+      "note": ""
+    },
+    {
+      "stage": "reject_dup_id",
+      "rows": 500,
+      "note": "exact retry rows removed"
+    },
+    {
+      "stage": "golden_all_events",
+      "rows": 25000,
+      "note": ""
+    },
+    {
+      "stage": "golden_recovery",
+      "rows": 17534,
+      "note": "SUCCESS only; recovery=Rs 1,315,583,965"
+    }
+  ],
+  "agents": [
+    {
+      "stage": "raw",
+      "rows": 30000,
+      "note": ""
+    },
+    {
+      "stage": "golden_resolved",
+      "rows": 1000,
+      "note": "agent_id = source of truth (latest updated_at)"
+    }
+  ],
+  "accounts": [
+    {
+      "stage": "raw",
+      "rows": 30000,
+      "note": ""
+    },
+    {
+      "stage": "golden",
+      "rows": 30000,
+      "note": ""
+    }
+  ],
+  "call_dispositions": [
+    {
+      "stage": "raw",
+      "rows": 35000,
+      "note": ""
+    },
+    {
+      "stage": "golden_std",
+      "rows": 35000,
+      "note": "PTP->PROMISE_TO_PAY unified"
+    }
+  ],
+  "account_metrics": [
+    {
+      "stage": "golden",
+      "rows": 30000,
+      "note": "1 row/account with recovery+contact features"
+    }
+  ],
+  "monthly_metrics": [
+    {
+      "stage": "golden",
+      "rows": 8,
+      "note": "8 months of independent metrics"
+    }
+  ]
+}
