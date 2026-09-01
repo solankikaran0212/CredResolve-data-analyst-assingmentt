@@ -37,16 +37,6 @@ collections_analysis/
     └── architecture.svg             ← production medallion design (contracts, late data, monitoring)
 ```
 
-## How to reproduce
-```bash
-# 1. Point the pipeline at your raw CSVs (default: /home/claude/data), then:
-python golden/build_golden.py          # writes golden/out/ + prints raw→reject→golden lineage
-
-# 2. Walk the reasoning:
-jupyter notebook notebook/analysis.ipynb   # set RAW to your raw path in cell 1
-
-# 3. SQL path (Databricks): run sql/01_golden_layer.sql then sql/02_metrics_and_forensics.sql
-```
 
 ## Method notes
 - **Recovery** = `payment_status = 'SUCCESS'`, de-duplicated on **`payment_id`** (never `payment_reference`).
